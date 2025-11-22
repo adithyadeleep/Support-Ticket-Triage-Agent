@@ -186,7 +186,7 @@ Enable autoscaling (HPA, Cloud Run concurrency).
 
 ---
 
-## (Optional) Demo Notes
+## Demo Notes
 
 You may include screenshots to demonstrate the UI and result:
 
@@ -199,14 +199,13 @@ _Add image showing ticket text being entered._
 _Add image showing structured JSON: analysis, KB matches, suggested action._
 
 Place screenshots in a folder like:
-```
+
 /screenshots/input.png
 /screenshots/result.png
-```
+
 Reference them in your README:
-```markdown
+markdown
 ![Input Demo](screenshots/input.png)
 ![Result Demo](screenshots/result.png)
-```
 
 ---
