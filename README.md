@@ -195,4 +195,6 @@ Enable autoscaling (HPA, Cloud Run concurrency).
 ### 2️⃣ Result Screen
 
 ![Result](screenshots/result.png) 
+![Result](screenshots/result2.png) 
+
 ---
