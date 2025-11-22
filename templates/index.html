@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Support Ticket Triage</title>
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card-bg: #ffffff;
+      --border: #e4e7ec;
+      --text: #1a1a1a;
+      --subtext: #6b7280;
+      --primary: #2563eb;
+      --primary-hover: #1e4fcf;
+      --radius: 10px;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: var(--bg);
+      margin: 0;
+      padding: 0;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+      margin: 40px 20px;
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 26px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    label {
+      font-size: 15px;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 140px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 15px;
+      resize: vertical;
+      outline: none;
+    }
+
+    textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    button {
+      background: var(--primary);
+      color: white;
+      padding: 12px 20px;
+      font-size: 15px;
+      font-weight: 500;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s ease;
+      margin-top: 16px;
+    }
+
+    button:hover {
+      background: var(--primary-hover);
+    }
+
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--subtext);
+    }
+
+    .footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Support Ticket Triage</h1>
+
+    {% if error %}
+      <p style="color: red; font-weight: 600; margin-bottom: 15px;">{{ error }}</p>
+    {% endif %}
+
+    <form method="post" action="/submit">
+      <label>Ticket Description</label>
+      <textarea name="text" placeholder="Describe the issue in detail..."></textarea>
+      <button type="submit">Run Triage</button>
+    </form>
+
+    <div class="footer">
+      <p>Use API instead: <code>POST /triage</code></p>
+      <p><a href="/docs">Open API Documentation</a></p>
+    </div>
+  </div>
+</body>
+</html>
