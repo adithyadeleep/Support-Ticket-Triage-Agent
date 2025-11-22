@@ -1,0 +1,107 @@
+[
+  {
+    "id": "ISSUE-001",
+    "title": "VPN Error 800",
+    "category": "Network",
+    "symptoms": ["vpn", "error 800", "cannot connect"],
+    "recommended_action": "Verify VPN server address and restart VPN service."
+  },
+  {
+    "id": "ISSUE-002",
+    "title": "Checkout Error 500 on Mobile",
+    "category": "Bug",
+    "symptoms": ["checkout", "mobile", "error 500"],
+    "recommended_action": "Escalate to backend team; possible server crash."
+  },
+  {
+    "id": "ISSUE-003",
+    "title": "Password Reset Loop",
+    "category": "Login",
+    "symptoms": ["password reset", "cannot login", "reset loop"],
+    "recommended_action": "Reset MFA token and send reset link manually."
+  },
+  {
+    "id": "ISSUE-004",
+    "title": "Email Sending Error 0x800CCC0F",
+    "category": "Software",
+    "symptoms": ["outlook", "sending", "0x800ccc0f"],
+    "recommended_action": "Disable firewall and repair PST file."
+  },
+  {
+    "id": "ISSUE-005",
+    "title": "Printer Paper Jam",
+    "category": "Hardware",
+    "symptoms": ["printer", "paper jam", "stuck"],
+    "recommended_action": "Clear paper tray and restart printer."
+  },
+  {
+    "id": "ISSUE-006",
+    "title": "Slow Website Load",
+    "category": "Performance",
+    "symptoms": ["slow", "loading", "delay"],
+    "recommended_action": "Check CDN configuration; escalate to devops."
+  },
+  {
+    "id": "ISSUE-007",
+    "title": "Login MFA Failure",
+    "category": "Login",
+    "symptoms": ["mfa", "otp", "login failed"],
+    "recommended_action": "Resync authenticator app."
+  },
+  {
+    "id": "ISSUE-008",
+    "title": "Database Timeout",
+    "category": "Backend",
+    "symptoms": ["database", "timeout", "500"],
+    "recommended_action": "Escalate to backend immediately."
+  },
+  {
+    "id": "ISSUE-009",
+    "title": "API Rate Limit Exceeded",
+    "category": "Backend",
+    "symptoms": ["rate limit", "429", "api"],
+    "recommended_action": "Increase rate limit or implement backoff."
+  },
+  {
+    "id": "ISSUE-010",
+    "title": "UI Button Not Working",
+    "category": "Bug",
+    "symptoms": ["button", "ui", "click"],
+    "recommended_action": "Check JS errors; escalate to frontend."
+  },
+  {
+    "id": "ISSUE-011",
+    "title": "Billing Charge Twice",
+    "category": "Billing",
+    "symptoms": ["double charge", "billing", "payment"],
+    "recommended_action": "Refund duplicate charge and verify Stripe logs."
+  },
+  {
+    "id": "ISSUE-012",
+    "title": "Search Feature Not Returning Results",
+    "category": "Bug",
+    "symptoms": ["search", "no results"],
+    "recommended_action": "Rebuild search index."
+  },
+  {
+    "id": "ISSUE-013",
+    "title": "App Crash Android",
+    "category": "Mobile",
+    "symptoms": ["android", "crash", "bug"],
+    "recommended_action": "Collect logs and escalate to mobile team."
+  },
+  {
+    "id": "ISSUE-014",
+    "title": "Cannot Upload Files",
+    "category": "Bug",
+    "symptoms": ["upload", "files", "failed"],
+    "recommended_action": "Check S3 bucket permissions."
+  },
+  {
+    "id": "ISSUE-015",
+    "title": "Frequent Logout",
+    "category": "Login",
+    "symptoms": ["logout", "session expired"],
+    "recommended_action": "Increase session TTL."
+  }
+]
