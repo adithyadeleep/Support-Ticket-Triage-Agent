@@ -188,24 +188,11 @@ Enable autoscaling (HPA, Cloud Run concurrency).
 
 ## Demo Notes
 
-You may include screenshots to demonstrate the UI and result:
-
 ### 1️⃣ Input Screen
 
-_Add image showing ticket text being entered._
+![Input](screenshots/input.png)
 
 ### 2️⃣ Result Screen
 
-_Add image showing structured JSON: analysis, KB matches, suggested action._
-
-Place screenshots in a folder like:
-
-/screenshots/input.png
-/screenshots/result.png
-
-Reference them in your README:
-markdown
-![Input Demo](screenshots/input.png)
-![Result Demo](screenshots/result.png)
-
+![Result](screenshots/result.png) 
 ---
