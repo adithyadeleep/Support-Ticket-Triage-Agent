@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Triage Result</title>
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card-bg: #ffffff;
+      --border: #e4e7ec;
+      --text: #1a1a1a;
+      --subtext: #6b7280;
+      --primary: #2563eb;
+      --radius: 10px;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: var(--bg);
+      margin: 0;
+      padding: 0;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 40px 20px;
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 26px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+
+    pre, .card {
+      background: #f4f6f9;
+      padding: 15px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      font-family: Consolas, monospace;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 10px 16px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      margin-top: 20px;
+      transition: 0.2s;
+    }
+
+    .back-btn:hover {
+      background: #1e4fcf;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Triage Result</h1>
+
+    <a href="/" class="back-btn">← Back</a>
+
+    <div class="section">
+      <div class="section-title">Analysis</div>
+      <pre>{{ result.analysis.json(indent=2) }}</pre>
+    </div>
+
+    <div class="section">
+      <div class="section-title">KB Matches</div>
+      {% if result.similar_issues %}
+        <ul>
+          {% for hit in result.similar_issues %}
+            <li>
+              <strong>{{ hit.id }}</strong> — {{ hit.title }}  
+              <div class="card">{{ hit.recommended_action }}</div>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No related KB issues found.</p>
+      {% endif %}
+    </div>
+
+    <div class="section">
+      <div class="section-title">Suggested Action</div>
+      <div class="card">{{ result.suggested_action }}</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Known Issue?</div>
+      <div class="card">{{ result.known_issue }}</div>
+    </div>
+
+  </div>
+</body>
+</html>
+
